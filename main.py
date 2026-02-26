@@ -23,7 +23,7 @@ def main():
     args = parser.parse_args()
 
     # Define standard Primary hints in case they appear in the XML
-    PRIMARY_HINTS = ["INTERACTION", "LAUNCH", "AUDIO_STREAMING_LOW_LATENCY", "GAME", "EXPENSIVE_RENDERING"]
+    PRIMARY_HINTS = ["INTERACTION", "LAUNCH", "AUDIO_STREAMING_LOW_LATENCY", "GAME_LOADING", "GAME", "EXPENSIVE_RENDERING"]
 
     # Mapping MTK variants to their standard AOSP hints (only if Primary is absent)
     ALIASES = {
@@ -31,7 +31,7 @@ def main():
         "MTKPOWER_HINT_UX_SCROLLING_COMMON": "INTERACTION",
         "MTKPOWER_HINT_LAUNCH": "LAUNCH",
         "MTKPOWER_HINT_AUDIO_LATENCY_UL": "AUDIO_STREAMING_LOW_LATENCY",
-        "GAME_LOADING": "GAME",
+        "MTKPOWER_HINT_EXT_LAUNCH_FOR_GAME": "GAME_LOADING",
         "MTKPOWER_HINT_GAME_MODE": "GAME"
     }
 
