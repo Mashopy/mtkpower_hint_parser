@@ -51,6 +51,12 @@ def main():
         "PERF_RES_SCHED_PREFER_IDLE_TA":  {"node": "UclampTALatency", "type": "value"}
     }
 
+    DEFAULT_HINT_DURATIONS = {
+        "INTERACTION": 80,
+        "LAUNCH": 30000,
+        "GAME_LOADING": 5000,
+    }
+
     try:
         config = json.loads(Path(args.json_file).read_text())
         node_map = {n["Name"]: n["Values"] for n in config.get("Nodes", [])}
@@ -84,9 +90,11 @@ def main():
         if target_hint not in hint_registry:
             hint_registry[target_hint] = {}
 
-        # Use hold time as duration if specified, otherwise default to 0 (instant)
+        # Use hold time as duration if specified, otherwise apply MediaTek default durations for known hints
         hold_time = scenario.find("./data[@cmd='PERF_RES_POWER_HINT_HOLD_TIME']")
         duration = int(hold_time.get('param1')) if hold_time is not None else 0
+        if duration == 0:
+            duration = DEFAULT_HINT_DURATIONS.get(target_hint, 0)
 
         for data in scenario.findall('data'):
             cmd = data.get('cmd')
