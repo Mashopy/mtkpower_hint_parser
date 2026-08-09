@@ -29,7 +29,10 @@ def main():
     ALIASES = {
         "MTKPOWER_HINT_UX_SCROLLING": "INTERACTION",
         "MTKPOWER_HINT_UX_SCROLLING_COMMON": "INTERACTION",
+        "MTKPOWER_HINT_UX_SCROLLING_NORMAL_MODE": "INTERACTION",
+        "MTKPOWER_HINT_UX_TOUCH_MOVE": "INTERACTION",
         "MTKPOWER_HINT_LAUNCH": "LAUNCH",
+        "MTKPOWER_HINT_SCENE_TRANSITION": "LAUNCH",
         "MTKPOWER_HINT_AUDIO_LATENCY_UL": "AUDIO_STREAMING_LOW_LATENCY",
         "MTKPOWER_HINT_EXT_LAUNCH_FOR_GAME": "GAME_LOADING",
         "MTKPOWER_HINT_GAME_MODE": "GAME"
@@ -48,6 +51,7 @@ def main():
         "PERF_RES_GPU_GED_TIMER_BASE_DVFS_MARGIN": {"node": "GpuBaseDvfsMargin", "type": "value"},
         "PERF_RES_GPU_GED_LOADING_BASE_DVFS_STEP": {"node": "GpuBaseDvfsStep", "type": "value"},
         "PERF_RES_SCHED_UCLAMP_MIN_TA":   {"node": "UclampTAMin", "type": "value"},
+        "PERF_RES_SCHED_UCLAMP_MAX_TA":   {"node": "UclampTAMax", "type": "value"},
         "PERF_RES_SCHED_PREFER_IDLE_TA":  {"node": "UclampTALatency", "type": "value"}
     }
 
