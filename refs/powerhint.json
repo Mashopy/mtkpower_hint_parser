@@ -21,6 +21,7 @@
       "Name": "GpuPwrLevel",
       "Path": "/proc/gpufreqv2/fix_target_opp_index",
       "Values": [
+        "-1",
         "0",
         "1",
         "2",
@@ -74,6 +75,7 @@
       "ResetOnInit": true,
       "DefaultIndex": 0,
       "Comments": [
+        "[-1*] normal",
         "[00*] freq: 1300000, volt: 81875, vsram: 81875, posdiv: 1, margin: 8125, power: 1093",
         "[01*] freq: 1250000, volt: 80000, vsram: 80000, posdiv: 1, margin: 8750, power: 1005",
         "[02*] freq: 1200000, volt: 77500, vsram: 77500, posdiv: 1, margin: 10000, power: 909",
